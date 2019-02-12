@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FragmentTutorialApp</string>
+    <string name="return_button">Return to main activity</string>
+    <string name="welcome_fragment1">Welcome to Fragment 1</string>
+    <string name="welcome_fragment2">Welcome to Fragment 2</string>
+    <string name="welcome_fragment3">Welcome to Fragment 3</string>
+    <string name="welcome_main">Welcome to the Main Activity</string>
+
+</resources>
