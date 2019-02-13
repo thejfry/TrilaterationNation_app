@@ -32,6 +32,7 @@ public class FragmentActivity extends AppCompatActivity {
         adapter.addFragment(new Fragment1(), "Fragment 1");
         adapter.addFragment(new Fragment2(), "Fragment 2");
         adapter.addFragment(new Fragment3(), "Fragment 3");
+        adapter.addFragment(new Fragment4(), "Fragment 4");
         viewPager.setAdapter(adapter);
     }
 
@@ -41,26 +42,32 @@ public class FragmentActivity extends AppCompatActivity {
 
     public void btnNavMain(View view){
         Log.i("LOG","btnNavMainActivity");
-        Toast.makeText(this, "Welcome to main activity",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Welcome to main activity",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
     public void btnNavAnchor1(View view){
         Log.i("LOG","btnNavAnchor1");
-        Toast.makeText(this, "Welcome to anchor 1 selection",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "Welcome to anchor 1 selection",Toast.LENGTH_SHORT).show();
         this.setViewPager(0);
     }
 
     public void btnNavAnchor2(View view){
-        Log.i("LOG","btnNavAnchor1");
-        Toast.makeText(this, "Welcome to anchor 2 selection",Toast.LENGTH_SHORT).show();
+        Log.i("LOG","btnNavAnchor2");
+//        Toast.makeText(this, "Welcome to anchor 2 selection",Toast.LENGTH_SHORT).show();
         this.setViewPager(1);
     }
 
     public void btnNavAnchor3(View view){
-        Log.i("LOG","btnNavAnchor1");
-        Toast.makeText(this, "Welcome to anchor 3 selection",Toast.LENGTH_SHORT).show();
+        Log.i("LOG","btnNavAnchor3");
+//        Toast.makeText(this, "Welcome to anchor 3 selection",Toast.LENGTH_SHORT).show();
         this.setViewPager(2);
+    }
+
+    public void btnNavAnchor4(View view){
+        Log.i("LOG","btnNavAnchor4");
+//        Toast.makeText(this, "Welcome to anchor 4 selection",Toast.LENGTH_SHORT).show();
+        this.setViewPager(3);
     }
 }

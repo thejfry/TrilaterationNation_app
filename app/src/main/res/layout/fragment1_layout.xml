@@ -8,18 +8,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:layout_marginTop="40dp"
         android:text="@string/welcome_fragment1" />
 
+    <view
+        android:id="@+id/mapView"
+        class="com.example.jeffreyplett.fragmenttutorialapp.MyCanvasView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textFragmentTitle"
+        android:layout_above="@id/btnNextFragment"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"/>
 
     <Button
         android:id="@+id/btnNextFragment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:layout_below="@id/textFragmentTitle"
-        android:text="Next Activity" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/btn_next_anchor" />
 
 </RelativeLayout>

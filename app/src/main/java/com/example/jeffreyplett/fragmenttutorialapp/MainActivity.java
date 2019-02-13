@@ -29,25 +29,4 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-//    public void btnToFrag1(View view){
-//        Log.d(TAG, "btnToFrag1");
-//        Toast.makeText(this ,"Going to first fragment", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(this, FragmentActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void btnToFrag2(View view){
-//        Log.d(TAG, "btnToFrag2");
-//        Toast.makeText(this ,"Going to second fragment", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(this, FragmentActivity.class);
-//        startActivity(intent);
-//
-//    }
-//
-//    public void btnToFrag3(View view){
-//        Log.d(TAG, "btnToFrag3");
-//        Toast.makeText(this ,"Going to third fragment", Toast.LENGTH_SHORT).show();
-//        Intent intent = new Intent(this, FragmentActivity.class);
-//        startActivity(intent);
-//    }
 }

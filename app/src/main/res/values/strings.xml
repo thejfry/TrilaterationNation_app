@@ -1,9 +1,14 @@
 <resources>
     <string name="app_name">FragmentTutorialApp</string>
     <string name="return_button">Return to main activity</string>
-    <string name="welcome_fragment1">Welcome to Fragment 1</string>
-    <string name="welcome_fragment2">Welcome to Fragment 2</string>
-    <string name="welcome_fragment3">Welcome to Fragment 3</string>
+    <string name="welcome_fragment1">Please select the location of anchor 1</string>
+    <string name="welcome_fragment2">Please select the location of anchor 2</string>
+    <string name="welcome_fragment3">Please select the location of anchor 3</string>
+    <string name="welcome_fragment4">Please select the location of anchor 4</string>
     <string name="welcome_main">Welcome to the Main Activity</string>
-
+    <string name="btn_next_anchor">Next Anchor</string>
+    <string name="btn_prev_anchor">Previous Anchor</string>
+    <string name="anchor1_coords">Anchor 1: </string>
+    <string name="anchor2_coords">Anchor 2: </string>
+    <string name="anchor3_coords">Anchor 3: </string>
 </resources>

@@ -23,7 +23,7 @@ public class Fragment1 extends Fragment {
         btnNextFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"Going to next fragment", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getActivity(),"Going to next anchor", Toast.LENGTH_SHORT).show();
                 ((FragmentActivity)getActivity()).setViewPager(1);
             }
         });
