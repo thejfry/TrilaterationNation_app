@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnNavFragActivity(View view){
         Log.i("LOG","btnToFragActivity");
-        Toast.makeText(this, "Welcome to fragment activity",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome to anchor selection",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, SelectAnchorsActivity.class);
         startActivity(intent);
     }

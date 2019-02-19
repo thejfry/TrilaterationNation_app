@@ -6,17 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SelectAnchorsActivity extends AppCompatActivity {
 
     private static final String TAG = "SelectAnchorsActivity";
     private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
     private ViewPager mViewPager;
+    private List<Anchor> mAnchors = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fragment);
+        setContentView(R.layout.activity_select_anchors);
 
         mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
 
@@ -40,33 +45,15 @@ public class SelectAnchorsActivity extends AppCompatActivity {
     }
 
     public void btnNavMain(View view){
-        Log.i("LOG","btnNavMainActivity");
-//        Toast.makeText(this, "Welcome to main activity",Toast.LENGTH_SHORT).show();
+        Log.i("TAG","btnNavMainActivity");
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
-    public void btnNavAnchor1(View view){
-        Log.i("LOG","btnNavAnchor1");
-//        Toast.makeText(this, "Welcome to anchor 1 selection",Toast.LENGTH_SHORT).show();
-        this.setViewPager(0);
+    public void btnSubmitAnchor(View view){
+
+        Log.i("TAG","btnSubmitAnchor");
+        Toast.makeText(this, "Anchor is submitted",Toast.LENGTH_SHORT).show();
     }
 
-    public void btnNavAnchor2(View view){
-        Log.i("LOG","btnNavAnchor2");
-//        Toast.makeText(this, "Welcome to anchor 2 selection",Toast.LENGTH_SHORT).show();
-        this.setViewPager(1);
-    }
-
-    public void btnNavAnchor3(View view){
-        Log.i("LOG","btnNavAnchor3");
-//        Toast.makeText(this, "Welcome to anchor 3 selection",Toast.LENGTH_SHORT).show();
-        this.setViewPager(2);
-    }
-
-    public void btnNavAnchor4(View view){
-        Log.i("LOG","btnNavAnchor4");
-//        Toast.makeText(this, "Welcome to anchor 4 selection",Toast.LENGTH_SHORT).show();
-        this.setViewPager(3);
-    }
 }

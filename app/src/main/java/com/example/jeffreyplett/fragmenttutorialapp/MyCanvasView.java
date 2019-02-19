@@ -18,8 +18,10 @@ https://codelabs.developers.google.com/codelabs/advanced-android-training-draw-o
  */
 
 public class MyCanvasView extends View {
-    private Paint mPaint;
-    private int mDrawColor;
+    private Paint mNewAnchor;
+    private Paint mExistingAnchor;
+    private int colorBlack;
+    private int colorRed;
     private Canvas mExtraCanvas;
     private Bitmap mExtraBitmap;
     private float mX, mY;
@@ -27,6 +29,7 @@ public class MyCanvasView extends View {
     private float rectHeight = 15;
     private static final float TOUCH_TOLERANCE = 4;
     private Rect mFrame = new Rect();
+    private Anchor tempAnchor = new Anchor();
 
     MyCanvasView(Context context){
         this(context, null);
@@ -34,17 +37,27 @@ public class MyCanvasView extends View {
 
     public MyCanvasView(Context context, AttributeSet attributeSet){
         super(context);
+        tempAnchor.setName("tempAnchor");
 
-//        mBackgroundColor = ResourcesCompat.getColor(getResources(),R.color.opaque_orange,null);
-        mDrawColor = ResourcesCompat.getColor(getResources(),R.color.black,null);
+        colorBlack = ResourcesCompat.getColor(getResources(),R.color.black,null);
+        colorRed = ResourcesCompat.getColor(getResources(),R.color.red,null);
 
-        mPaint = new Paint();
-        mPaint.setColor(mDrawColor);
-        mPaint.setAntiAlias(true);
-        mPaint.setDither(true);
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setTextSize(30);
-        mPaint.setStrokeWidth(3);
+        mNewAnchor = new Paint();
+        mNewAnchor.setColor(colorBlack);
+        mNewAnchor.setAntiAlias(true);
+        mNewAnchor.setDither(true);
+        mNewAnchor.setStyle(Paint.Style.STROKE);
+        mNewAnchor.setTextSize(30);
+        mNewAnchor.setStrokeWidth(3);
+
+        mExistingAnchor = new Paint();
+        mExistingAnchor.setColor(colorRed);
+        mExistingAnchor.setAntiAlias(true);
+        mExistingAnchor.setDither(true);
+        mExistingAnchor.setStyle(Paint.Style.STROKE);
+        mExistingAnchor.setTextSize(30);
+        mExistingAnchor.setStrokeWidth(3);
+
         setBackgroundResource(R.drawable.end301);
         Log.i("TAG", "constructing canvas view");
 
@@ -109,10 +122,12 @@ public class MyCanvasView extends View {
         }
 
         mExtraCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
-        mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mPaint);
-        mExtraCanvas.drawText(coords, mX + x_offset, mY + y_offset, mPaint);
+        mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mNewAnchor);
+        mExtraCanvas.drawText(coords, mX + x_offset, mY + y_offset, mNewAnchor);
+        tempAnchor.setAnchorX(mX);
+        tempAnchor.setAnchorY(mY);
 
         Log.i("TAG", "Click location: " + coords);
-        Log.i("TAG", "x offset:" + x_offset);
     }
+
 }
