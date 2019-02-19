@@ -1,12 +1,10 @@
 package com.example.jeffreyplett.fragmenttutorialapp;
 
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     public void btnNavFragActivity(View view){
         Log.i("LOG","btnToFragActivity");
         Toast.makeText(this, "Welcome to fragment activity",Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(this, FragmentActivity.class);
+        Intent intent = new Intent(this, SelectAnchorsActivity.class);
         startActivity(intent);
     }
 

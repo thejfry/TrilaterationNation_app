@@ -6,11 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-public class FragmentActivity extends AppCompatActivity {
+public class SelectAnchorsActivity extends AppCompatActivity {
 
-    private static final String TAG = "FragmentActivity";
+    private static final String TAG = "SelectAnchorsActivity";
     private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
     private ViewPager mViewPager;
 
@@ -29,10 +28,10 @@ public class FragmentActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Fragment1(), "Fragment 1");
-        adapter.addFragment(new Fragment2(), "Fragment 2");
-        adapter.addFragment(new Fragment3(), "Fragment 3");
-        adapter.addFragment(new Fragment4(), "Fragment 4");
+        adapter.addAnchor(new Anchor1(), "Anchor 1");
+        adapter.addAnchor(new Anchor2(), "Anchor 2");
+        adapter.addAnchor(new Anchor3(), "Anchor 3");
+        adapter.addAnchor(new Anchor4(), "Anchor 4");
         viewPager.setAdapter(adapter);
     }
 

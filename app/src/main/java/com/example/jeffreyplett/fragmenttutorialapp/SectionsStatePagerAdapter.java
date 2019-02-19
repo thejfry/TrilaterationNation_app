@@ -16,7 +16,7 @@ public class SectionsStatePagerAdapter extends FragmentStatePagerAdapter {
         super(fm);
     }
 
-    public void addFragment(Fragment fragment, String title){
+    public void addAnchor(Fragment fragment, String title){
         mFramgmentList.add(fragment);
         mFragmentTitleList.add(title);
     }
