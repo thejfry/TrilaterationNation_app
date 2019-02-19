@@ -84,11 +84,32 @@ public class MyCanvasView extends View {
         mY = y;
         String coords = "("+(int)mX+", "+(int)mY+")";
         String extra = getResources().getString(R.string.anchor1_coords);
+        float x_offset, y_offset;
 
         mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mPaint);
-        mExtraCanvas.drawText(coords,mX,mY - 20, mPaint);
+
+        if (mX > 1000) {
+            x_offset = -150;
+        } else if (mX > 970) {
+            x_offset = -110;
+        }  else if (mX > 950) {
+            x_offset = -80;
+        } else if (mX > 930) {
+            x_offset = -60;
+        } else if (mX > 910) {
+            x_offset = -20;
+        } else {
+            x_offset = 0;
+        }
+
+        if (mY < 60){
+            y_offset = 40;
+        } else{
+            y_offset = -20;
+        }
+        mExtraCanvas.drawText(coords, mX + x_offset, mY + y_offset, mPaint);
 
         Log.i("TAG", "Click location: " + coords);
-        Log.i("TAG", extra + coords);
+        Log.i("TAG", "x offset:" + x_offset);
     }
 }
