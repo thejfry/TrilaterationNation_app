@@ -3,7 +3,9 @@ package com.example.jeffreyplett.fragmenttutorialapp;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
@@ -86,8 +88,6 @@ public class MyCanvasView extends View {
         String extra = getResources().getString(R.string.anchor1_coords);
         float x_offset, y_offset;
 
-        mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mPaint);
-
         if (mX > 1000) {
             x_offset = -150;
         } else if (mX > 970) {
@@ -107,6 +107,9 @@ public class MyCanvasView extends View {
         } else{
             y_offset = -20;
         }
+
+        mExtraCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mPaint);
         mExtraCanvas.drawText(coords, mX + x_offset, mY + y_offset, mPaint);
 
         Log.i("TAG", "Click location: " + coords);
