@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FragmentTutorialApp</string>
+    <string name="app_name">TrilaterationNation_app</string>
     <string name="return_button">Return to main activity</string>
     <string name="welcome_fragment1">Please select the location of anchor 1</string>
     <string name="welcome_fragment2">Please select the location of anchor 2</string>

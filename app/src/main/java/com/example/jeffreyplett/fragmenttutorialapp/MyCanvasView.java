@@ -98,7 +98,6 @@ public class MyCanvasView extends View {
         mX = x;
         mY = y;
         String coords = "("+(int)mX+", "+(int)mY+")";
-        String extra = getResources().getString(R.string.anchor1_coords);
         float x_offset, y_offset;
 
         if (mX > 1000) {
@@ -124,10 +123,15 @@ public class MyCanvasView extends View {
         mExtraCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
         mExtraCanvas.drawRect(mX-(rectWidth/2),mY-(rectHeight/2),mX+(rectWidth/2),mY+(rectHeight/2),mNewAnchor);
         mExtraCanvas.drawText(coords, mX + x_offset, mY + y_offset, mNewAnchor);
+
         tempAnchor.setAnchorX(mX);
         tempAnchor.setAnchorY(mY);
 
         Log.i("TAG", "Click location: " + coords);
     }
+
+
+
+
 
 }

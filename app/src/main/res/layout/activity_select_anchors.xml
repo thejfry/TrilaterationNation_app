@@ -24,13 +24,4 @@
         android:onClick="btnNavMain"
         android:text="Main Menu" />
 
-    <Button
-        android:id="@+id/btnSubmitAnchor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:onClick="btnSubmitAnchor"
-        android:text="Submit Anchor" />
-
 </RelativeLayout>
