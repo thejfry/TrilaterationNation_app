@@ -73,6 +73,8 @@ public class MyCanvasView extends View {
         mExtraCanvas = new Canvas(mExtraBitmap);
         int inset = 40;
         mFrame = new Rect(inset, inset, width - inset, height - inset);
+
+        Log.i("TAG", "Width of bitmap: " + mExtraBitmap.getWidth());
     }
 
     @Override
@@ -102,16 +104,17 @@ public class MyCanvasView extends View {
         mY = y;
         String coords = "("+(int)mX+", "+(int)mY+")";
         float x_offset, y_offset;
+        int bitmapWidth = mExtraBitmap.getWidth();
 
-        if (mX > 1000) {
-            x_offset = -150;
-        } else if (mX > 970) {
+        if (mX > bitmapWidth-30) {
+            x_offset = -140;
+        } else if (mX > bitmapWidth-60) {
             x_offset = -110;
-        }  else if (mX > 950) {
+        }  else if (mX > bitmapWidth-90) {
             x_offset = -80;
-        } else if (mX > 930) {
-            x_offset = -60;
-        } else if (mX > 910) {
+        } else if (mX > bitmapWidth-120) {
+            x_offset = -50;
+        } else if (mX > bitmapWidth-150) {
             x_offset = -20;
         } else {
             x_offset = 0;
