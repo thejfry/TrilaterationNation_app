@@ -130,14 +130,11 @@ public class MyCanvasView extends View {
         tempAnchor.setAnchorX(mX);
         tempAnchor.setAnchorY(mY);
 
-        Log.i("TAG", "Click location: " + coords);
         Log.i("TAG", "tempAnchor: \n" + tempAnchor.getName() + "\n" + tempAnchor.getAnchorX() + "\n" + tempAnchor.getAnchorY());
     }
 
 
     public static Anchor getTempAnchor() {
-        Log.i("TAG", "Getting tempAnchor");
-        Log.i("TAG", "Sending this anchor: \n" + tempAnchor.getName() + "\n" + tempAnchor.getAnchorX() + "\n" + tempAnchor.getAnchorY());
         return tempAnchor;
     }
 }

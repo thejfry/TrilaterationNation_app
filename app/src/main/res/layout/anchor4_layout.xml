@@ -13,7 +13,7 @@
         android:text="@string/welcome_fragment4" />
 
     <view
-        android:id="@+id/mapView"
+        android:id="@+id/mapView4"
         class="com.example.jeffreyplett.fragmenttutorialapp.MyCanvasView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,5 +31,13 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:text="@string/btn_prev_anchor" />
+
+    <Button
+        android:id="@+id/btnSubmitAnchor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Submit" />
 
 </RelativeLayout>

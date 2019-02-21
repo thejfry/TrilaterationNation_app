@@ -17,12 +17,11 @@ public class Anchor1 extends Fragment {
     private Button btnNextFragment;
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
-    private Anchor receivedAnchor;
-//    Intent mIntent = new Intent(this, MainActivity.class);
+    private static Anchor receivedAnchor;
     private Anchor1Listener listener;
 
-    public interface Anchor1Listener{
-        void onInputAnchor1Send(Anchor input);
+    public interface Anchor1Listener {
+        void onInputAnchor1Sent(Anchor anchor);
     }
 
     @Nullable
@@ -37,29 +36,40 @@ public class Anchor1 extends Fragment {
         btnNextFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(getActivity(),"Going to next anchor", Toast.LENGTH_SHORT).show();
-                ((SelectAnchorsActivity)getActivity()).setViewPager(1);
+            ((SelectAnchorsActivity)getActivity()).setViewPager(1);
             }
         });
 
         btnSubmitAnchor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-
                 try {
-                    Log.i("TAG","Trying to receive an anchor");
                     receivedAnchor = vMapView.getTempAnchor();
                     receivedAnchor.setName("Anchor1");
-                    Log.i("TAG", "receivedAnchor: \n" + receivedAnchor.getName() + "\n" + receivedAnchor.getAnchorX() + "\n" + receivedAnchor.getAnchorY());
-                    Toast.makeText(getContext(),"Submitted anchor: \n" + receivedAnchor.getName() + "\n" + receivedAnchor.getAnchorX() + "\n" + receivedAnchor.getAnchorY(),Toast.LENGTH_LONG).show();
+                    listener.onInputAnchor1Sent(receivedAnchor);
                 } catch (Exception e){
-                    Toast.makeText(getContext(),"No anchor was received",Toast.LENGTH_SHORT).show();
                     Log.i("TAG","no anchor was received");
                 }
             }
         });
 
-
         return view;
     }
+
+    @Override
+    public void onAttach(Context context){
+        super.onAttach(context);
+        if (context instanceof Anchor1Listener){
+            listener = (Anchor1Listener) context;
+        } else {
+            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
+        }
+    }
+
+    @Override
+    public void onDetach(){
+        super.onDetach();
+        listener = null;
+    }
+
 }

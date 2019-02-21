@@ -1,19 +1,14 @@
 package com.example.jeffreyplett.fragmenttutorialapp;
 
-public class Anchor {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Anchor implements Parcelable {
     private String name;
     private float x;
     private float y;
-    private float tempX;
-    private float tempY;
 
     public Anchor() {
-    }
-
-    public Anchor(String name, float x, float y) {
-        this.name = name;
-        this.x = x;
-        this.y = y;
     }
 
     public String getName() {
@@ -40,19 +35,69 @@ public class Anchor {
         this.y = y;
     }
 
-    public float getTempX() {
-        return tempX;
+
+    protected Anchor(Parcel in) {
+        name = in.readString();
+        x = in.readFloat();
+        y = in.readFloat();
     }
 
-    public void setTempX(float tempX) {
-        this.tempX = tempX;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public float getTempY() {
-        return tempY;
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeFloat(x);
+        dest.writeFloat(y);
     }
 
-    public void setTempY(float tempY) {
-        this.tempY = tempY;
-    }
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Anchor> CREATOR = new Parcelable.Creator<Anchor>() {
+        @Override
+        public Anchor createFromParcel(Parcel in) {
+            return new Anchor(in);
+        }
+
+        @Override
+        public Anchor[] newArray(int size) {
+            return new Anchor[size];
+        }
+    };
 }
+
+//public class Anchor {
+//    private String name;
+//    private float x;
+//    private float y;
+//
+//    public Anchor() {
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public float getAnchorX() {
+//        return x;
+//    }
+//
+//    public float getAnchorY() {
+//        return y;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public void setAnchorX(float x) {
+//        this.x = x;
+//    }
+//
+//    public void setAnchorY(float y) {
+//        this.y = y;
+//    }
+//
+//}
