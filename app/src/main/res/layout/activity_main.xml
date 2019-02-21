@@ -30,37 +30,4 @@
         android:text="Select Anchors" />
 
 
-    <!--<Button-->
-        <!--android:id="@+id/btnToFrag1"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/textTitle"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:onClick="btnToFrag1"-->
-
-        <!--android:text="Fragment 1" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/btnToFrag2"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/btnToFrag1"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:onClick="btnToFrag2"-->
-
-        <!--android:text="Fragment 2" />-->
-
-    <!--<Button-->
-        <!--android:id="@+id/btnToFrag3"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_below="@id/btnToFrag2"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:onClick="btnToFrag3"-->
-
-        <!--android:text="Fragment 3" />-->
-
 </RelativeLayout>

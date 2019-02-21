@@ -49,11 +49,6 @@ public class SelectAnchorsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
-//    public void btnSubmitAnchor(View view){
-//        mIntent.putExtra("Anchor",)
-//        Log.i("TAG","btnSubmitAnchor");
-//        Toast.makeText(this, "Anchor is submitted",Toast.LENGTH_SHORT).show();
-//    }
+    
 
 }
