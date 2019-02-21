@@ -29,5 +29,108 @@
         android:onClick="btnNavFragActivity"
         android:text="Select Anchors" />
 
+    <TextView
+        android:id="@+id/Anchor1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="129dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/Anchor1_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_name"
+        android:layout_alignParentStart="true"
+        android:text="x" />
+
+    <TextView
+        android:id="@+id/Anchor1_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_x"
+        android:layout_alignParentStart="true"
+        android:text="y" />
+
+    <TextView
+        android:id="@+id/Anchor2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Anchor1_name"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="4dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/Anchor2_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_name"
+        android:layout_alignStart="@+id/Anchor2_name"
+        android:layout_marginTop="5dp"
+        android:text="x" />
+
+    <TextView
+        android:id="@+id/Anchor2_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_x"
+        android:layout_alignStart="@+id/Anchor2_name"
+        android:layout_marginTop="3dp"
+        android:text="y" />
+
+    <TextView
+        android:id="@+id/Anchor3_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Anchor1_name"
+        android:layout_centerHorizontal="true"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/Anchor3_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_name"
+        android:layout_alignStart="@+id/Anchor3_name"
+        android:layout_marginTop="5dp"
+        android:text="x" />
+
+    <TextView
+        android:id="@+id/Anchor3_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Anchor3_name"
+        android:layout_alignTop="@+id/Anchor1_y"
+        android:text="y" />
+
+    <TextView
+        android:id="@+id/Anchor4_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Anchor1_name"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="48dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/Anchor4_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_name"
+        android:layout_alignStart="@+id/Anchor4_name"
+        android:text="x" />
+
+    <TextView
+        android:id="@+id/Anchor4_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Anchor1_x"
+        android:layout_alignStart="@+id/Anchor4_name"
+        android:text="y" />
+
 
 </RelativeLayout>

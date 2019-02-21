@@ -56,7 +56,7 @@ public class SelectAnchorsActivity extends AppCompatActivity implements Anchor1.
 
     @Override
     public void onInputAnchor1Sent(Anchor anchor) {
-        anchorList.add(0,anchor);
+        anchorList.set(0,anchor);
 //        anchorList.add(anchor);
         Log.i("TAG","In anchorList: \n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
 
@@ -65,19 +65,19 @@ public class SelectAnchorsActivity extends AppCompatActivity implements Anchor1.
 
     @Override
     public void onInputAnchor2Sent(Anchor anchor) {
-        anchorList.add(1,anchor);
+        anchorList.set(1,anchor);
 //        Toast.makeText(this,"Final anchor location: \n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY(),Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onInputAnchor3Sent(Anchor anchor) {
-        anchorList.add(2,anchor);
+        anchorList.set(2,anchor);
 //        Toast.makeText(this,"Final anchor location: \n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY(),Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onInputAnchor4Sent(Anchor anchor) {
-        anchorList.add(3,anchor);
+        anchorList.set(3,anchor);
 //        Toast.makeText(this,"Final anchor location: \n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY(),Toast.LENGTH_SHORT).show();
     }
 }
