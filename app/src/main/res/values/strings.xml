@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">TrilaterationNation_app</string>
-    <string name="return_button">Return to main activity</string>
+    <string name="return_button">Return to home</string>
     <string name="welcome_fragment1">Please select the location of anchor 1</string>
     <string name="welcome_fragment2">Please select the location of anchor 2</string>
     <string name="welcome_fragment3">Please select the location of anchor 3</string>
     <string name="welcome_fragment4">Please select the location of anchor 4</string>
-    <string name="welcome_main">Welcome to the Main Activity</string>
+    <string name="welcome_main">Welcome to Trilateration Nation\'s Indoor Location App</string>
     <string name="btn_next_anchor">Next</string>
     <string name="btn_prev_anchor">Previous</string>
     <string name="anchor1_coords">Anchor 1: </string>
