@@ -32,7 +32,7 @@ public class MyCanvasView extends View {
     private float rectHeight = 15;
     private static final float TOUCH_TOLERANCE = 4;
     private Rect mFrame = new Rect();
-    private static Anchor tempAnchor = new Anchor();
+    public static Anchor tempAnchor = new Anchor();
 
     MyCanvasView(Context context){
         this(context, null);
@@ -62,7 +62,6 @@ public class MyCanvasView extends View {
         mExistingAnchorPaint.setStrokeWidth(3);
 
         setBackgroundResource(R.drawable.end301);
-        Log.i("TAG", "constructing canvas view");
 
     }
 
@@ -73,8 +72,6 @@ public class MyCanvasView extends View {
         mExtraCanvas = new Canvas(mExtraBitmap);
         int inset = 40;
         mFrame = new Rect(inset, inset, width - inset, height - inset);
-
-        Log.i("TAG", "Width of bitmap: " + mExtraBitmap.getWidth());
     }
 
     @Override
@@ -137,7 +134,7 @@ public class MyCanvasView extends View {
     }
 
 
-    public static Anchor getTempAnchor() {
+    public Anchor getTempAnchor() {
         return tempAnchor;
     }
 }

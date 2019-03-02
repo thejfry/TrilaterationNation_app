@@ -17,12 +17,7 @@ public class Anchor1 extends Fragment {
     private Button btnNextFragment;
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
-    private static Anchor receivedAnchor;
-    private Anchor1Listener listener;
-
-    public interface Anchor1Listener {
-        void onInputAnchor1Sent(Anchor anchor);
-    }
+    private Anchor receivedAnchor;
 
     @Nullable
     @Override
@@ -44,9 +39,9 @@ public class Anchor1 extends Fragment {
             @Override
             public void onClick(View v){
                 try {
-                    receivedAnchor = vMapView.getTempAnchor();
+                    receivedAnchor = MyCanvasView.tempAnchor;
                     receivedAnchor.setName("Anchor1");
-                    listener.onInputAnchor1Sent(receivedAnchor);
+                    SelectAnchorsActivity.anchorList.set(0,receivedAnchor);
                 } catch (Exception e){
                     Log.i("TAG","no anchor was received");
                 }
@@ -54,22 +49,6 @@ public class Anchor1 extends Fragment {
         });
 
         return view;
-    }
-
-    @Override
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof Anchor1Listener){
-            listener = (Anchor1Listener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
-        }
-    }
-
-    @Override
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
     }
 
 }

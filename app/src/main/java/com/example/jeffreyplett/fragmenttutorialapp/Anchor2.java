@@ -18,12 +18,12 @@ public class Anchor2 extends Fragment {
     private Button btnPrevFragment;
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
-    private Anchor receivedAnchor;
-    private Anchor2Listener listener;
-
-    public interface Anchor2Listener {
-        void onInputAnchor2Sent(Anchor anchor);
-    }
+    private Anchor receivedAnchor = new Anchor();
+//    private Anchor2Listener listener;
+//
+//    public interface Anchor2Listener {
+//        void onInputAnchor2Sent(Anchor anchor);
+//    }
 
     @Nullable
     @Override
@@ -53,9 +53,11 @@ public class Anchor2 extends Fragment {
             @Override
             public void onClick(View v){
                 try {
-                    receivedAnchor = vMapView.getTempAnchor();
+                    receivedAnchor = MyCanvasView.tempAnchor;
                     receivedAnchor.setName("Anchor2");
-                    listener.onInputAnchor2Sent(receivedAnchor);
+//                    listener.onInputAnchor2Sent(receivedAnchor);
+                    SelectAnchorsActivity.anchorList.set(1,receivedAnchor);
+
                 } catch (Exception e){
                     Log.i("TAG","no anchor was received");
                 }
@@ -65,20 +67,20 @@ public class Anchor2 extends Fragment {
         return view;
     }
 
-    @Override
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof Anchor2Listener){
-            listener = (Anchor2Listener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
-        }
-    }
-
-    @Override
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
-    }
+//    @Override
+//    public void onAttach(Context context){
+//        super.onAttach(context);
+//        if (context instanceof Anchor2Listener){
+//            listener = (Anchor2Listener) context;
+//        } else {
+//            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
+//        }
+//    }
+//
+//    @Override
+//    public void onDetach(){
+//        super.onDetach();
+//        listener = null;
+//    }
 
 }

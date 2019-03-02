@@ -59,83 +59,159 @@ public class MainActivity extends AppCompatActivity {
     public void onResume() {
         super.onResume();
         try {
-            anchorList = getIntent().getParcelableArrayListExtra("anchorList");
+            //Calling the select anchors activity when anchorList is a public static variable
             try{
-                anchor1Name.setText(anchorList.get(0).getName());
+                anchor1Name.setText(SelectAnchorsActivity.anchorList.get(0).getName());
             } catch (Exception e){
                 anchor1Name.setText("");
                 Log.i("TAG","Problem with Anchor1 name");
             }
             try{
-                anchor1x.setText(String.format("%f", anchorList.get(0).getAnchorX()));
+                anchor1x.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(0).getAnchorX()));
             } catch (Exception e){
                 anchor1x.setText("");
                 Log.i("TAG","Problem with Anchor1 x");
             }
             try{
-                anchor1y.setText(String.format("%f", anchorList.get(0).getAnchorY()));
+                anchor1y.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(0).getAnchorY()));
             } catch (Exception e){
                 anchor1y.setText("");
                 Log.i("TAG","Problem with Anchor1 y");
             }
             try{
-                anchor2Name.setText(anchorList.get(1).getName());
+                anchor2Name.setText(SelectAnchorsActivity.anchorList.get(1).getName());
             } catch (Exception e){
                 anchor2Name.setText("");
                 Log.i("TAG","Problem with Anchor2 name");
             }
             try{
-                anchor2x.setText(String.format("%f", anchorList.get(1).getAnchorX()));
+                anchor2x.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(1).getAnchorX()));
             } catch (Exception e){
                 anchor2x.setText("");
                 Log.i("TAG","Problem with Anchor2 x");
             }
             try{
-                anchor2y.setText(String.format("%f", anchorList.get(1).getAnchorY()));
+                anchor2y.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(1).getAnchorY()));
             } catch (Exception e){
                 anchor2y.setText("");
                 Log.i("TAG","Problem with Anchor2 y");
             }
             try{
-                anchor3Name.setText(anchorList.get(2).getName());
+                anchor3Name.setText(SelectAnchorsActivity.anchorList.get(2).getName());
             } catch (Exception e){
                 anchor3Name.setText("");
                 Log.i("TAG","Problem with Anchor3 name");
             }
             try{
-                anchor3x.setText(String.format("%f", anchorList.get(2).getAnchorX()));
+                anchor3x.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(2).getAnchorX()));
             } catch (Exception e){
                 anchor3x.setText("");
                 Log.i("TAG","Problem with Anchor3 x");
             }
             try{
-                anchor3y.setText(String.format("%f", anchorList.get(2).getAnchorY()));
+                anchor3y.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(2).getAnchorY()));
             } catch (Exception e){
                 anchor3y.setText("");
                 Log.i("TAG","Problem with Anchor3 y");
             }
             try{
-                anchor4Name.setText(anchorList.get(3).getName());
+                anchor4Name.setText(SelectAnchorsActivity.anchorList.get(3).getName());
             } catch (Exception e){
                 anchor4Name.setText("");
                 Log.i("TAG","Problem with Anchor4 name");
             }
             try{
-                anchor4x.setText(String.format("%f", anchorList.get(3).getAnchorX()));
+                anchor4x.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(3).getAnchorX()));
             } catch (Exception e){
                 anchor4x.setText("");
                 Log.i("TAG","Problem with Anchor4 x");
             }
             try{
-                anchor4y.setText(String.format("%f", anchorList.get(3).getAnchorY()));
+                anchor4y.setText(String.format("%.2f", SelectAnchorsActivity.anchorList.get(3).getAnchorY()));
             } catch (Exception e){
                 anchor4y.setText("");
                 Log.i("TAG","Problem with Anchor4 y");
             }
-            Log.i("TAG","Anchor 1 in main activity:\n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
-            Log.i("TAG","Anchor 2 in main activity:\n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY());
-            Log.i("TAG","Anchor 3 in main activity:\n" + anchorList.get(2).getName() + "\n" + anchorList.get(2).getAnchorX() + "\n" + anchorList.get(2).getAnchorY());
-            Log.i("TAG","Anchor 4 in main activity:\n" + anchorList.get(3).getName() + "\n" + anchorList.get(3).getAnchorX() + "\n" + anchorList.get(3).getAnchorY());
+
+
+//            //Passing the array list back to this activity as an extra on the intent
+//            anchorList = getIntent().getParcelableArrayListExtra("anchorList");
+//            try{
+//                anchor1Name.setText(anchorList.get(0).getName());
+//            } catch (Exception e){
+//                anchor1Name.setText("");
+//                Log.i("TAG","Problem with Anchor1 name");
+//            }
+//            try{
+//                anchor1x.setText(String.format("%.2f", anchorList.get(0).getAnchorX()));
+//            } catch (Exception e){
+//                anchor1x.setText("");
+//                Log.i("TAG","Problem with Anchor1 x");
+//            }
+//            try{
+//                anchor1y.setText(String.format("%.2f", anchorList.get(0).getAnchorY()));
+//            } catch (Exception e){
+//                anchor1y.setText("");
+//                Log.i("TAG","Problem with Anchor1 y");
+//            }
+//            try{
+//                anchor2Name.setText(anchorList.get(1).getName());
+//            } catch (Exception e){
+//                anchor2Name.setText("");
+//                Log.i("TAG","Problem with Anchor2 name");
+//            }
+//            try{
+//                anchor2x.setText(String.format("%.2f", anchorList.get(1).getAnchorX()));
+//            } catch (Exception e){
+//                anchor2x.setText("");
+//                Log.i("TAG","Problem with Anchor2 x");
+//            }
+//            try{
+//                anchor2y.setText(String.format("%.2f", anchorList.get(1).getAnchorY()));
+//            } catch (Exception e){
+//                anchor2y.setText("");
+//                Log.i("TAG","Problem with Anchor2 y");
+//            }
+//            try{
+//                anchor3Name.setText(anchorList.get(2).getName());
+//            } catch (Exception e){
+//                anchor3Name.setText("");
+//                Log.i("TAG","Problem with Anchor3 name");
+//            }
+//            try{
+//                anchor3x.setText(String.format("%.2f", anchorList.get(2).getAnchorX()));
+//            } catch (Exception e){
+//                anchor3x.setText("");
+//                Log.i("TAG","Problem with Anchor3 x");
+//            }
+//            try{
+//                anchor3y.setText(String.format("%.2f", anchorList.get(2).getAnchorY()));
+//            } catch (Exception e){
+//                anchor3y.setText("");
+//                Log.i("TAG","Problem with Anchor3 y");
+//            }
+//            try{
+//                anchor4Name.setText(anchorList.get(3).getName());
+//            } catch (Exception e){
+//                anchor4Name.setText("");
+//                Log.i("TAG","Problem with Anchor4 name");
+//            }
+//            try{
+//                anchor4x.setText(String.format("%.2f", anchorList.get(3).getAnchorX()));
+//            } catch (Exception e){
+//                anchor4x.setText("");
+//                Log.i("TAG","Problem with Anchor4 x");
+//            }
+//            try{
+//                anchor4y.setText(String.format("%.2f", anchorList.get(3).getAnchorY()));
+//            } catch (Exception e){
+//                anchor4y.setText("");
+//                Log.i("TAG","Problem with Anchor4 y");
+//            }
+//            Log.i("TAG","Anchor 1 in main activity:\n" + SelectAnchorsActivity.anchorList.get(0).getName() + "\n" + SelectAnchorsActivity.anchorList.get(0).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(0).getAnchorY());
+//            Log.i("TAG","Anchor 2 in main activity:\n" + SelectAnchorsActivity.anchorList.get(1).getName() + "\n" + SelectAnchorsActivity.anchorList.get(1).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(1).getAnchorY());
+//            Log.i("TAG","Anchor 3 in main activity:\n" + SelectAnchorsActivity.anchorList.get(2).getName() + "\n" + SelectAnchorsActivity.anchorList.get(2).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(2).getAnchorY());
+//            Log.i("TAG","Anchor 4 in main activity:\n" + SelectAnchorsActivity.anchorList.get(3).getName() + "\n" + SelectAnchorsActivity.anchorList.get(3).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(3).getAnchorY());
         } catch (Exception e) {
             Log.i("TAG","No anchor list");
         }
