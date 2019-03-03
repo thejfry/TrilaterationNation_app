@@ -17,6 +17,7 @@ public class Anchor1 extends Fragment {
     private Button btnNextFragment;
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
+    private Anchor tempAnchor;
     private Anchor receivedAnchor;
 
     @Nullable
@@ -38,10 +39,13 @@ public class Anchor1 extends Fragment {
         btnSubmitAnchor.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
+                Log.i("TAG", "Trying to submit anchor");
+//                receivedAnchor = vMapView.getTempAnchor();
                 try {
-                    receivedAnchor = MyCanvasView.tempAnchor;
-                    receivedAnchor.setName("Anchor1");
-                    SelectAnchorsActivity.anchorList.set(0,receivedAnchor);
+                    receivedAnchor = tempAnchor;
+                    receivedAnchor.setName("Anchor 1");
+                    Log.i("TAG", "Received anchor 1:\n" + receivedAnchor.getName() + "\n" + receivedAnchor.getAnchorX() + "\n" + receivedAnchor.getAnchorY());
+                    ((SelectAnchorsActivity) getActivity()).setAnchor1(receivedAnchor);
                 } catch (Exception e){
                     Log.i("TAG","no anchor was received");
                 }
@@ -51,4 +55,7 @@ public class Anchor1 extends Fragment {
         return view;
     }
 
+    public void setTempAnchor(Anchor tempAnchor) {
+        this.tempAnchor = tempAnchor;
+    }
 }

@@ -11,11 +11,14 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SelectAnchorsActivity extends AppCompatActivity implements /*Anchor1.Anchor1Listener, Anchor2.Anchor2Listener, */Anchor3.Anchor3Listener, Anchor4.Anchor4Listener {
+public class SelectAnchorsActivity extends AppCompatActivity {
 
     private SectionsStatePagerAdapter mSectionsStatePagerAdapter;
     private ViewPager mViewPager;
-    public static ArrayList<Anchor> anchorList;
+    private Anchor Anchor1;
+    private Anchor Anchor2;
+    private Anchor Anchor3;
+    private Anchor Anchor4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +26,6 @@ public class SelectAnchorsActivity extends AppCompatActivity implements /*Anchor
         setContentView(R.layout.activity_select_anchors);
 
         mSectionsStatePagerAdapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
-        anchorList = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            anchorList.add(new Anchor());
-            anchorList.get(i).setName("Anchor " + (i+1));
-        }
 
         mViewPager = (ViewPager) findViewById(R.id.fragmentContainer);
         setupViewPager(mViewPager);
@@ -47,40 +45,55 @@ public class SelectAnchorsActivity extends AppCompatActivity implements /*Anchor
     }
 
     public void btnNavMain(View view){
-//        Log.i("TAG","Anchor 1 in selectAnchorsActivity:\n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
-//        Log.i("TAG","Anchor 2 in selectAnchorsActivity:\n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY());
-//        Log.i("TAG","Anchor 3 in selectAnchorsActivity:\n" + anchorList.get(2).getName() + "\n" + anchorList.get(2).getAnchorX() + "\n" + anchorList.get(2).getAnchorY());
-//        Log.i("TAG","Anchor 4 in selectAnchorsActivity:\n" + anchorList.get(3).getName() + "\n" + anchorList.get(3).getAnchorX() + "\n" + anchorList.get(3).getAnchorY());
-        Log.i("TAG","Anchor 1 in SelectAnchorsActivity:\n" + SelectAnchorsActivity.anchorList.get(0).getName() + "\n" + SelectAnchorsActivity.anchorList.get(0).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(0).getAnchorY());
-        Log.i("TAG","Anchor 2 in SelectAnchorsActivity:\n" + SelectAnchorsActivity.anchorList.get(1).getName() + "\n" + SelectAnchorsActivity.anchorList.get(1).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(1).getAnchorY());
-        Log.i("TAG","Anchor 3 in SelectAnchorsActivity:\n" + SelectAnchorsActivity.anchorList.get(2).getName() + "\n" + SelectAnchorsActivity.anchorList.get(2).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(2).getAnchorY());
-        Log.i("TAG","Anchor 4 in SelectAnchorsActivity:\n" + SelectAnchorsActivity.anchorList.get(3).getName() + "\n" + SelectAnchorsActivity.anchorList.get(3).getAnchorX() + "\n" + SelectAnchorsActivity.anchorList.get(3).getAnchorY());
+        Log.i("tag","Packaging the following anchors to send to main activity:\n" + Anchor1.getName() + "\n" + Anchor1.getAnchorX() + "\n" + Anchor1.getAnchorY() + "\n" + Anchor2.getName() + "\n" + Anchor2.getAnchorX() + "\n" + Anchor2.getAnchorY());
         Intent intent = new Intent(this, MainActivity.class);
+        if(Anchor1 != null) {
+            intent.putExtra("Anchor1", Anchor1);
+        }
+        if(Anchor2 != null) {
+            intent.putExtra("Anchor2", Anchor2);
+        }
+        if(Anchor3 != null) {
+            intent.putExtra("Anchor3", Anchor3);
+        }
+        if(Anchor4 != null) {
+            intent.putExtra("Anchor4", Anchor4);
+        }
         startActivity(intent);
     }
 
-//    @Override
-//    public void onInputAnchor1Sent(Anchor anchor) {
-//        anchorList.set(0,anchor);
-////        anchorList.add(anchor);
-//        Log.i("TAG","In anchorList: \n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
-//    }
-//
-//    @Override
-//    public void onInputAnchor2Sent(Anchor anchor) {
-//        Log.i("TAG","In anchorList (anchor 1 before anchor 2 is set): \n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
-//        anchorList.set(1,anchor);
-//        Log.i("TAG","In anchorList (anchor 1 after anchor 2 is set): \n" + anchorList.get(0).getName() + "\n" + anchorList.get(0).getAnchorX() + "\n" + anchorList.get(0).getAnchorY());
-//        Log.i("TAG","In anchorList (anchor 2): \n" + anchorList.get(1).getName() + "\n" + anchorList.get(1).getAnchorX() + "\n" + anchorList.get(1).getAnchorY());
-//    }
-
-    @Override
-    public void onInputAnchor3Sent(Anchor anchor) {
-        anchorList.set(2,anchor);
+    public Anchor getAnchor1() {
+        return Anchor1;
     }
 
-    @Override
-    public void onInputAnchor4Sent(Anchor anchor) {
-        anchorList.set(3,anchor);
+    public void setAnchor1(Anchor anchor1) {
+        Log.i("TAG", "Setting anchor 1:\n" + anchor1.getName() + "\n" + anchor1.getAnchorX() + "\n" + anchor1.getAnchorY());
+        this.Anchor1 = anchor1;
+    }
+
+    public Anchor getAnchor2() {
+        return Anchor2;
+    }
+
+    public void setAnchor2(Anchor anchor2) {
+        Log.i("TAG", "Setting anchor 2:\n" + anchor2.getName() + "\n" + anchor2.getAnchorX() + "\n" + anchor2.getAnchorY());
+        Log.i("TAG", "Setting anchor 1:\n" + Anchor1.getName() + "\n" + Anchor1.getAnchorX() + "\n" + Anchor1.getAnchorY());
+        this.Anchor2 = anchor2;
+    }
+
+    public Anchor getAnchor3() {
+        return Anchor3;
+    }
+
+    public void setAnchor3(Anchor anchor3) {
+        this.Anchor3 = anchor3;
+    }
+
+    public Anchor getAnchor4() {
+        return Anchor4;
+    }
+
+    public void setAnchor4(Anchor anchor4) {
+        this.Anchor4 = anchor4;
     }
 }

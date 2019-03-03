@@ -32,7 +32,7 @@ public class MyCanvasView extends View {
     private float rectHeight = 15;
     private static final float TOUCH_TOLERANCE = 4;
     private Rect mFrame = new Rect();
-    public static Anchor tempAnchor = new Anchor();
+    public Anchor tempAnchor = new Anchor();
 
     MyCanvasView(Context context){
         this(context, null);
@@ -131,10 +131,12 @@ public class MyCanvasView extends View {
         tempAnchor.setAnchorY(mY);
 
         Log.i("TAG", "tempAnchor: \n" + tempAnchor.getName() + "\n" + tempAnchor.getAnchorX() + "\n" + tempAnchor.getAnchorY());
+
     }
 
 
-    public Anchor getTempAnchor() {
-        return tempAnchor;
-    }
+//    public Anchor getTempAnchor() {
+//        Log.i("TAG", "Trying to get the following tempAnchor: \n" + tempAnchor.getName() + "\n" + tempAnchor.getAnchorX() + "\n" + tempAnchor.getAnchorY());
+//        return this.tempAnchor;
+//    }
 }

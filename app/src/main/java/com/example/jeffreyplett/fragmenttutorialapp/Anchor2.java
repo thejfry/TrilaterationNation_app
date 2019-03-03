@@ -19,11 +19,7 @@ public class Anchor2 extends Fragment {
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
     private Anchor receivedAnchor = new Anchor();
-//    private Anchor2Listener listener;
-//
-//    public interface Anchor2Listener {
-//        void onInputAnchor2Sent(Anchor anchor);
-//    }
+
 
     @Nullable
     @Override
@@ -53,11 +49,10 @@ public class Anchor2 extends Fragment {
             @Override
             public void onClick(View v){
                 try {
-                    receivedAnchor = MyCanvasView.tempAnchor;
-                    receivedAnchor.setName("Anchor2");
-//                    listener.onInputAnchor2Sent(receivedAnchor);
-                    SelectAnchorsActivity.anchorList.set(1,receivedAnchor);
-
+                    receivedAnchor = vMapView.getTempAnchor();
+                    receivedAnchor.setName("Anchor 2");
+                    Log.i("TAG", "Received anchor 2:\n" + receivedAnchor.getName() + "\n" + receivedAnchor.getAnchorX() + "\n" + receivedAnchor.getAnchorY());
+                    ((SelectAnchorsActivity) getActivity()).setAnchor2(receivedAnchor);
                 } catch (Exception e){
                     Log.i("TAG","no anchor was received");
                 }
@@ -67,20 +62,5 @@ public class Anchor2 extends Fragment {
         return view;
     }
 
-//    @Override
-//    public void onAttach(Context context){
-//        super.onAttach(context);
-//        if (context instanceof Anchor2Listener){
-//            listener = (Anchor2Listener) context;
-//        } else {
-//            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
-//        }
-//    }
-//
-//    @Override
-//    public void onDetach(){
-//        super.onDetach();
-//        listener = null;
-//    }
 
 }

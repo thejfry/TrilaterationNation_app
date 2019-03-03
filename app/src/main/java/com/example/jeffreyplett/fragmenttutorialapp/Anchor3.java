@@ -19,11 +19,6 @@ public class Anchor3 extends Fragment {
     private Button btnSubmitAnchor;
     private MyCanvasView vMapView;
     private Anchor receivedAnchor;
-    private Anchor3Listener listener;
-
-    public interface Anchor3Listener {
-        void onInputAnchor3Sent(Anchor anchor);
-    }
 
     @Nullable
     @Override
@@ -54,8 +49,9 @@ public class Anchor3 extends Fragment {
             public void onClick(View v){
                 try {
                     receivedAnchor = vMapView.getTempAnchor();
-                    receivedAnchor.setName("Anchor3");
-                    listener.onInputAnchor3Sent(receivedAnchor);
+                    receivedAnchor.setName("Anchor 3");
+                    Log.i("TAG", "Received anchor 3:\n" + receivedAnchor.getName() + "\n" + receivedAnchor.getAnchorX() + "\n" + receivedAnchor.getAnchorY());
+                    ((SelectAnchorsActivity) getActivity()).setAnchor3(receivedAnchor);
                 } catch (Exception e){
                     Log.i("TAG","no anchor was received");
                 }
@@ -63,22 +59,6 @@ public class Anchor3 extends Fragment {
         });
 
         return view;
-    }
-
-    @Override
-    public void onAttach(Context context){
-        super.onAttach(context);
-        if (context instanceof Anchor3Listener){
-            listener = (Anchor3Listener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement Anchor1Listener");
-        }
-    }
-
-    @Override
-    public void onDetach(){
-        super.onDetach();
-        listener = null;
     }
 
 }
